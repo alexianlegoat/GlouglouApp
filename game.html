@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>La Partie - Glouglou</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="jeu-container">
+            <img src="logo_glouglou.png" alt="Logo Glouglou" id="logo-principal">
+            
+            <div id="game-scroll-area">
+            
+                <div id="zone-de-jeu">
+                    
+                    <div id="gorgees-badge" style="display: none;">
+                        <span id="gorgees-count">?</span> 🍺
+                    </div>
+                    
+                    <div id="nom-joueur-actuel">Chargement...</div>
+                    <div id="action-de-jeu">...</div>
+                </div>
+                
+                <button id="btnTourSuivant" class="btn-principal">
+                    Tour Suivant
+                </button>
+                
+                <div id="regle-active-bar" style="display: none;">
+                    <ul id="regle-active-liste">
+                        </ul>
+                </div>
+                
+            </div> 
+            
+            <div class="game-controls">
+                <button id="btnManagePlayers" class="btn-control">Gérer Joueurs</button>
+                <button id="btnChangePack" class="btn-control">Changer de Mode</button>
+            </div>
+        </div>
+
+        <div id="ecran-fin">
+            <h2>C'est terminé !</h2>
+            <p>Vous êtes arrivés au bout des cartes de ce(s) mode.</p>
+            <button id="btnReplay" class="btn-principal">Rejouer le(s) même mode</button>
+            <button id="btnChangeModeEnd" class="btn-secondary">Changer de mode</button>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h4>Quitter la partie ?</h4>
+            <p>Êtes-vous sûr de vouloir quitter la partie en cours et changer de mode ?</p>
+            <div class="modal-buttons">
+                <button id="modalBtnYes" class="modal-btn modal-btn-yes">Oui</button>
+                <button id="modalBtnNo" class="modal-btn modal-btn-no">Non</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="managePlayersModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h4>Gérer les Joueurs</h4>
+            <ul id="modalPlayerList"></ul>
+            <div class="input-zone">
+                <input type="text" id="modalAddPlayerInput" placeholder="Nouveau joueur...">
+                <button type="button" id="modalAddPlayerBtnInline" class="add-button-inline">➕</button>
+            </div>
+            <div class="modal-buttons">
+                <button id="modalBtnClose" class="modal-btn modal-btn-ok">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="alertModalGame" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h4>Attention</h4>
+            <p>Vous ne pouvez pas supprimer le dernier joueur !</p>
+            <div class="modal-buttons">
+                <button id="modalBtnOKGame" class="modal-btn modal-btn-ok">OK</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ruleDetailModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content rule-modal-content">
+            <h4 id="modalRuleTitle">Détail de la règle</h4>
+            <div class="rule-modal-body">
+                <p id="modalRuleText">...</p>
+            </div>
+            <div class="modal-buttons">
+                <button id="modalBtnCompris" class="modal-btn modal-btn-ok">C'est noté !</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="passerelleModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h4>CHUT ! 🤫</h4>
+            <p id="passerelleText">...</p>
+            <div class="modal-buttons">
+                <button id="modalBtnCestFait" class="modal-btn modal-btn-ok">C'est fait</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="packs.js"></script>
+    <script src="game.js"></script>
+
+</body>
+</html>
